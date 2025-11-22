@@ -27,7 +27,7 @@ constraint_counter = itertools.count()
 
 def add_subtour_constraints(model, x, subtours, n):
     for S in subtours:
-        if len(S) >= n:
+        if len(S) == n:
             continue  # full tour
         cname = f"cut_{next(constraint_counter)}"
         model += (
